@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "Удаление постов животных",
+  "description": "Позволяет прятать посты определенных пользователей в вк",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["*://vk.com/zulinsvlog*"],
+      "js": ["vk_remove_posts.js"]
+    }
+  ]
+}
