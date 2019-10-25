@@ -19,6 +19,8 @@
 		}
 
 		observer.observe(initialList, {childList: true});	// следим за изменениями в изначальном списке тоже
+		var searchlist = document.getElementById('page_search_posts');
+		observer.observe(searchlist, {childList: true});	// следим за изменениями в поиске
 	}
 
 	// вызывается когда появляются новые посты
