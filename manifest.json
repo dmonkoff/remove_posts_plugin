@@ -7,7 +7,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://vk.com/zulinsvlog*"],
+      "matches": ["*://vk.com/*"],
       "js": ["vk_remove_posts.js"]
     }
   ]

@@ -1,9 +1,16 @@
-(function (){	
-	var observer = new MutationObserver(listModified);	// 
-
+var observer_body = new MutationObserver(wrapperFunc);
+mainFunc()
+observer_body.observe(document.body, {childList: true,subtree:true});
+function wrapperFunc(){
+	// console.log('azaza');
+	mainFunc();
+}
+function mainFunc(){	
+	// console.log('ja')
 	var initialList = document.getElementById('page_wall_posts');	// список изначальных постов на странице
 	if (initialList)
 	{
+		var observer = new MutationObserver(listModified);	// 
 		// список уже был заполнен при подключении расширения - убираем записи животных
 		var rows = initialList.children;
 		for (var i = 0; i < rows.length; i++)
@@ -26,7 +33,7 @@
 	// вызывается когда появляются новые посты
 	function listModified(mutations)
 	{
-		
+		console.log('ok')
 		for (var i = 0; i < mutations.length; i++)
 		{
 			var mut = mutations[i];
@@ -53,4 +60,4 @@
 	}
 
 
-})();
+};
